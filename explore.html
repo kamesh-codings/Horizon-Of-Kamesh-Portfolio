@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Horizon of Kamesh — Portfolio of Kamesh Sundaram, a B.Tech AI & Data Science student passionate about artificial intelligence, web development, and cutting-edge technology.">
+  <meta name="keywords" content="Kamesh Sundaram, AI, Data Science, Portfolio, B.Tech, Web Developer, Software Engineer, Machine Learning">
+  <meta name="author" content="Kamesh Sundaram">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Horizon of Kamesh — AI & Data Science Portfolio">
+  <meta property="og:description" content="Explore the journey, skills, and achievements of Kamesh Sundaram — an aspiring AI & Data Science professional.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Horizon of Kamesh — AI & Data Science Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+  <link rel="icon" id="dynamic-favicon" href="./Icons/Webpage Icon.png" type="image/png">
+  <link rel="shortcut icon" id="dynamic-favicon-shortcut" href="./Icons/Webpage Icon.png" type="image/png">
+</head>
+<body>
+
+  <!-- ========== Loading Screen ========== -->
+  <div id="loading-screen">
+    <div class="loader-logo">Horizon of Kamesh</div>
+    <div class="loader-bar-container">
+      <div class="loader-bar"></div>
+    </div>
+    <div class="loader-percentage">0%</div>
+  </div>
+
+  <!-- ========== Particle Background ========== -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html#home">Horizon of Kamesh</a>
+
+    <div class="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="#about" class="active">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#interests">Interests</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <div class="nav-right">
+
+      <button class="mobile-menu-btn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="#about" class="active">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#interests">Interests</a>
+    <a href="index.html">Contact</a>
+  </div>
+
+  <!-- ========== About Section ========== -->
+  <section class="section" id="about" style="padding-top: 120px;">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">👋 Get to know me</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <p class="section-subtitle">Passionate about pushing the boundaries of artificial intelligence and building solutions that matter.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <h3>Hi, I'm Kamesh Sundaram</h3>
+          <p>
+            I'm a second-year B.Tech student specializing in <strong>Artificial Intelligence &amp; Data Science</strong> at J.N.N Institute of Engineering (Autonomous), Tamil Nadu. My passion lies at the intersection of intelligent systems, data-driven decision making, and creative problem solving.
+          </p>
+          <p>
+            Beyond academics, I'm deeply involved in exploring <strong>generative AI tools</strong>, building web applications, and contributing to open-source projects. I believe in continuous learning and staying ahead of the technology curve. Whether it's crafting clean code, designing intuitive interfaces, or diving deep into data analysis — I bring curiosity and dedication to everything I do.
+          </p>
+          <p>
+            My goal is to become a top-tier AI &amp; Data Science professional, contributing to innovative projects at leading technology companies and research labs worldwide.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-card reveal">
+              <div class="stat-number">7+</div>
+              <div class="stat-label">Certificates</div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-number">2nd</div>
+              <div class="stat-label">Year Student</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-highlights reveal-right">
+          <div class="highlight-card">
+            <div class="highlight-icon">🤖</div>
+            <div class="highlight-content">
+              <h4>Artificial Intelligence</h4>
+              <p>Exploring machine learning algorithms, neural networks, and intelligent automation systems.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">📊</div>
+            <div class="highlight-content">
+              <h4>Data Science</h4>
+              <p>Passionate about extracting insights from data through analysis, visualization, and statistical modeling.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🌐</div>
+            <div class="highlight-content">
+              <h4>Web Development</h4>
+              <p>Building responsive, modern web applications with clean code and beautiful interfaces.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🧠</div>
+            <div class="highlight-content">
+              <h4>Generative AI Expert</h4>
+              <p>Proficient in prompt engineering, OpenAI GPT models, and cutting-edge generative AI tools.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🔓</div>
+            <div class="highlight-content">
+              <h4>Open Source</h4>
+              <p>Contributing to open-source projects and believing in collaborative software development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Skills Section ========== -->
+  <section class="section" id="skills">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">⚡ What I know</span>
+        <h2 class="section-title">Skills &amp; <span class="gradient-text">Expertise</span></h2>
+        <p class="section-subtitle">A collection of technologies and tools I've been working with and continuously learning.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="skills-categories">
+        <!-- Programming Languages -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">💻</div>
+            <h3 class="skill-category-title">Technical: Programming Languages</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">C</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">C++</span>
+              <span class="skill-percent">65%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="65"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Python (Learning)</span>
+              <span class="skill-percent">40%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="40"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🌐</div>
+            <h3 class="skill-category-title">Technical: Web Development</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">HTML</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">CSS</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-percent">60%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="60"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🛠️</div>
+            <h3 class="skill-category-title">Technical: Tools &amp; Technologies</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Generative AI Tools</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">OpenAI GPT Prompting</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">GitHub</span>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="70"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">VS Code</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🤝</div>
+            <h3 class="skill-category-title">Soft Skills</h3>
+          </div>
+          <div class="tag-container">
+            <span class="skill-tag">Active Listening</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Clear Communication</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Emotional Intelligence</span>
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">Conflict Resolution</span>
+            <span class="skill-tag">AI Models in Daily Life</span>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🗣️</div>
+            <h3 class="skill-category-title">Languages Known</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Tamil (Writing, Reading, Speaking, Conversation)</span>
+              <span class="skill-percent">Native</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="100"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">English (Writing, Reading, Speaking, Conversation)</span>
+              <span class="skill-percent">Fluent</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Hindi (Speaking, Conversation, Understanding)</span>
+              <span class="skill-percent">Intermediate</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="60"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Japanese (Beginner level)</span>
+              <span class="skill-percent">Beginner</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="20"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Certificates Section ========== -->
+  <section class="section" id="certificates">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">🏆 Achievements</span>
+        <h2 class="section-title">Certificates &amp; <span class="gradient-text">Achievements</span></h2>
+        <p class="section-subtitle">Showcasing my commitment to continuous learning and professional development.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="certificates-grid">
+        <!-- Certificate 1 -->
+        <div class="certificate-card reveal" id="cert-1"
+             data-duration="Approximately 1 hour"
+             data-objective="The primary objective of the Google Cloud Introduction to Generative AI course is to equip learners with fundamental AI literacy. It explains what Generative AI is, how it differs from traditional machine learning, and how to utilize Google tools to build custom Gen AI applications."
+             data-outcomes="Define Generative AI|Understand Model Mechanics|Explore Applications|Utilize Google Cloud Tools">
+          <div class="certificate-image-wrapper">
+            <img src="./certificates/1. Screenshot 2025-11-20 111832.png" alt="Introduction to Generative AI — Google Cloud" loading="lazy" width="640" height="400">
+            <div class="certificate-overlay">
+              <span class="certificate-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Details
+              </span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3 class="certificate-title">Introduction to Generative AI</h3>
+            <p class="certificate-issuer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+              Google Cloud
+            </p>
+          </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="certificate-card reveal" id="cert-2"
+             data-duration="Approximately 1 to 1.5 hour"
+             data-objective="The primary objective of the Introduction to Generative AI Studio course (offered by Simplilearn in collaboration with Google Cloud) is to equip learners with foundational knowledge and practical skills to explore, prototype, and customize advanced generative AI models."
+             data-outcomes="Understanding Core Concepts|Mastering Generative AI Studio|Prompt Engineering|Real-World Application">
+          <div class="certificate-image-wrapper">
+            <img src="./certificates/2..png" alt="Introduction to Generative AI Studio — Simplilearn & Google Cloud" loading="lazy" width="640" height="400">
+            <div class="certificate-overlay">
+              <span class="certificate-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Details
+              </span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3 class="certificate-title">Introduction to Generative AI Studio</h3>
+            <p class="certificate-issuer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+              Simplilearn &amp; Google Cloud
+            </p>
+          </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="certificate-card reveal" id="cert-3"
+             data-duration="3 hours 7 minutes"
+             data-objective="Understand how Generative AI can be used to extract insights and unlock the value of data across various domains."
+             data-outcomes="Data Analysis with Gen AI|Data-Driven Decision Making|Applied AI Strategies|Real-world Case Studies">
+          <div class="certificate-image-wrapper">
+            <img src="./certificates/3, Screenshot 2026-06-11 075645.png" alt="Gen AI to Unlock Data Value — Udemy & Infosys Springboard" loading="lazy" width="640" height="400">
+            <div class="certificate-overlay">
+              <span class="certificate-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Details
+              </span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3 class="certificate-title">Gen AI to Unlock Data Value</h3>
+            <p class="certificate-issuer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+              Udemy &amp; Infosys Springboard
+            </p>
+          </div>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="certificate-card reveal" id="cert-4"
+             data-duration="Approximately 2 hours"
+             data-objective="Learn how to effectively communicate with AI models using prompt engineering and leverage GitHub Copilot to accelerate software development."
+             data-outcomes="Mastering Prompts|Pair Programming with Copilot|Code Generation & Debugging|Improving Developer Productivity">
+          <div class="certificate-image-wrapper">
+            <img src="./certificates/4, Screenshot 2026-05-25 225241.png" alt="Introduction to Prompt Engineering with GitHub Copilot — Simplilearn" loading="lazy" width="640" height="400">
+            <div class="certificate-overlay">
+              <span class="certificate-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Details
+              </span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3 class="certificate-title">Introduction to Prompt Engineering with GitHub Copilot</h3>
+            <p class="certificate-issuer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+              Simplilearn
+            </p>
+          </div>
+        </div>
+
+        <!-- Certificate 5 -->
+        <div class="certificate-card reveal" id="cert-5"
+             data-duration="Approximately 1 to 2 hours"
+             data-objective="Provide a comprehensive understanding of ChatGPT, enabling anyone to use it effectively for personal and professional tasks."
+             data-outcomes="Effective Prompting Techniques|Task Automation|Content Generation|Everyday AI Integration">
+          <div class="certificate-image-wrapper">
+            <img src="./certificates/5, Chatgpt for Everyone-HCL GUVI Certification - z7u979021eC79wd7y2.png" alt="ChatGPT for Everyone — Guvi" loading="lazy" width="640" height="400">
+            <div class="certificate-overlay">
+              <span class="certificate-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Details
+              </span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3 class="certificate-title">ChatGPT for Everyone</h3>
+            <p class="certificate-issuer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+              Guvi
+            </p>
+          </div>
+        </div>
+
+        <!-- Certificate 6 -->
+        <div class="certificate-card reveal" id="cert-6"
+             data-duration="3 hours 55 minutes"
+             data-objective="Gain foundational knowledge of OpenAI's GPT models, their architecture, capabilities, and how they revolutionized natural language processing."
+             data-outcomes="Understanding GPT Architecture|Model Capabilities & Limitations|Natural Language Processing Basics|AI Ethics">
+          <div class="certificate-image-wrapper">
+            <img src="./certificates/6, Screenshot 2026-05-27 212842.png" alt="Introduction to OpenAI GPT Models — Infosys Springboard" loading="lazy" width="640" height="400">
+            <div class="certificate-overlay">
+              <span class="certificate-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Details
+              </span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3 class="certificate-title">Introduction to OpenAI GPT Models</h3>
+            <p class="certificate-issuer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+              Infosys Springboard, Infosys Wingspan
+            </p>
+          </div>
+        </div>
+
+        <!-- Certificate 7 -->
+        <div class="certificate-card reveal" id="cert-7"
+             data-duration="Approximately 2 hours"
+             data-objective="Explore advanced Generative AI tools and frameworks beyond basic text generation to solve complex problems and create diverse content."
+             data-outcomes="Advanced AI Frameworks|Multimodal AI Applications|Evaluating AI Outputs|Integrating Gen AI Tools">
+          <div class="certificate-image-wrapper">
+            <img src="./certificates/7, Screenshot 2026-06-08 114202.png" alt="Introduction to Advanced Gen AI Tools — Simplilearn" loading="lazy" width="640" height="400">
+            <div class="certificate-overlay">
+              <span class="certificate-view-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Details
+              </span>
+            </div>
+          </div>
+          <div class="certificate-info">
+            <h3 class="certificate-title">Introduction to Advanced Gen AI Tools</h3>
+            <p class="certificate-issuer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+              Simplilearn
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Details Modal -->
+  <div class="course-modal" id="course-modal" role="dialog" aria-modal="true" aria-label="Course details viewer">
+    <div class="course-modal-content">
+      <button class="modal-close" id="course-modal-close" aria-label="Close course details">&times;</button>
+      <div class="course-modal-header">
+        <h2 id="modal-course-title">Course Title</h2>
+        <p id="modal-course-issuer" class="certificate-issuer" style="margin-bottom:0; font-size:0.9rem;"></p>
+        <p id="modal-course-duration" style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;"></p>
+      </div>
+      <div class="course-modal-body">
+        <div class="course-modal-info">
+          <h3>Objective</h3>
+          <p id="modal-course-objective"></p>
+          <h3>Outcomes</h3>
+          <ul id="modal-course-outcomes">
+          </ul>
+        </div>
+        <div class="course-modal-thumbnail" id="modal-course-thumb-container">
+          <img id="modal-course-thumb" src="" alt="Certificate Thumbnail">
+          <div class="thumb-overlay"><span>View Full Certificate</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate Modal -->
+  <div class="certificate-modal" id="certificate-modal" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+    <button class="modal-close" id="cert-modal-close" aria-label="Close certificate viewer">&times;</button>
+    <img id="cert-modal-img" src="" alt="Certificate full view">
+  </div>
+
+  <!-- ========== Projects Section ========== -->
+  <section class="section" id="projects">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">🚀 Portfolio</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">A showcase of my recent work, highlighting my skills in AI, data science, and web development.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card reveal" style="border: 1px dashed var(--accent-blue); background: rgba(79, 143, 247, 0.05);">
+          <div class="project-info">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h3 class="project-title" style="margin-bottom: 0;">Portfolio Webpage</h3>
+              <span class="skill-tag" style="background: rgba(34, 197, 94, 0.15); color: #22c55e; padding: 0.2rem 0.6rem; border: 1px solid rgba(34, 197, 94, 0.3); font-size: 0.7rem; text-transform: uppercase; font-weight: 600;">Live</span>
+            </div>
+            <p class="project-desc">A comprehensive personal portfolio highlighting my academic journey, technical skills, and achievements.</p>
+            <div class="project-tags">
+              <span class="skill-tag" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">HTML</span>
+              <span class="skill-tag" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">CSS</span>
+              <span class="skill-tag" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">JavaScript</span>
+            </div>
+            <div class="project-links" style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+              <a href="index.html" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.45rem 1rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Live
+              </a>
+              <a href="https://github.com/kamesh-codings" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.45rem 1rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal" style="border: 1px solid var(--accent-cyan); background: rgba(0, 210, 211, 0.05);">
+          <div class="project-info">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h3 class="project-title" style="margin-bottom: 0;">Event Poster (HTML)</h3>
+              <span class="skill-tag" style="background: rgba(34, 197, 94, 0.15); color: #22c55e; padding: 0.2rem 0.6rem; border: 1px solid rgba(34, 197, 94, 0.3); font-size: 0.7rem; text-transform: uppercase; font-weight: 600;">Live</span>
+            </div>
+            <p class="project-desc">A visually appealing digital event poster designed and structured entirely using HTML and CSS.</p>
+            <div class="project-tags">
+              <span class="skill-tag" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">HTML</span>
+              <span class="skill-tag" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">CSS</span>
+            </div>
+            <div class="project-links" style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+              <a href="https://eventposterhtmlproject-kamesh.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.45rem 1rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/kamesh-codings/Event-Poster-HTML" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.45rem 1rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card reveal" style="border: 1px solid var(--accent-cyan); background: rgba(0, 210, 211, 0.05);">
+          <div class="project-info">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h3 class="project-title" style="margin-bottom: 0;">Prototype Course Registration Form</h3>
+              <span class="skill-tag" style="background: rgba(34, 197, 94, 0.15); color: #22c55e; padding: 0.2rem 0.6rem; border: 1px solid rgba(34, 197, 94, 0.3); font-size: 0.7rem; text-transform: uppercase; font-weight: 600;">Live</span>
+            </div>
+            <p class="project-desc">A functional, interactive prototype for an academic course registration form with client-side validation.</p>
+            <div class="project-tags">
+              <span class="skill-tag" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">HTML</span>
+              <span class="skill-tag" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">CSS</span>
+            </div>
+            <div class="project-links" style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+              <a href="https://courseregisterhtmlproject-kamesh.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.45rem 1rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/kamesh-codings/Course-Register-Form-HTML" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.45rem 1rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="projects-teaser reveal">🚀 Stay tuned &amp; updated to know upcoming new projects &amp; ideas</p>
+    </div>
+  </section>
+
+  <!-- ========== Education Section ========== -->
+  <section class="section" id="education">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">🎓 My Journey</span>
+        <h2 class="section-title">Education <span class="gradient-text">Timeline</span></h2>
+        <p class="section-subtitle">The academic milestones that have shaped my path toward becoming an AI professional.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="timeline">
+        <!-- Current -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-period">2025 — Present</span>
+            <h3 class="timeline-degree">B.Tech — Artificial Intelligence &amp; Data Science</h3>
+            <p class="timeline-school">J.N.N Institute of Engineering (Autonomous)</p>
+            <p class="timeline-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Kannigaipair, Chennai, Tamil Nadu
+            </p>
+            <div class="timeline-tags" style="margin-top: 1.25rem;">
+              <h4 style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Academic Foundations</h4>
+              <div class="tag-container" style="margin-top: 0;">
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Applied Calculus</span>
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Generative AI</span>
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Programming in C</span>
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Linear Algebra</span>
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Digital Principles</span>
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Computer Organization</span>
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Programming in C++</span>
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Japanese</span>
+                <span class="skill-tag" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Electricals & Electronics Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Higher Secondary -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-period">11th &amp; 12th Standard</span>
+            <h3 class="timeline-degree">Higher Secondary Education (Biology, Mathematics)</h3>
+            <p class="timeline-school">Don Bosco Matriculation School</p>
+            <p class="timeline-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Karanodai, Tamil Nadu
+            </p>
+          </div>
+        </div>
+
+        <!-- Secondary -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-period">5th — 10th Standard</span>
+            <h3 class="timeline-degree">Secondary School Education</h3>
+            <p class="timeline-school">St. Joseph Matriculation School</p>
+            <p class="timeline-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Periyapalayam, Tamil Nadu
+            </p>
+          </div>
+        </div>
+
+        <!-- Primary -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-period">KinderGarden(KG) — 4th Standard</span>
+            <h3 class="timeline-degree">Primary School Education</h3>
+            <p class="timeline-school">Holy Immanuel Matric School</p>
+            <p class="timeline-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Avadi, Chennai, Tamil Nadu
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Interests & Hobbies Section ========== -->
+  <section class="section" id="interests">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">🌟 Beyond Code</span>
+        <h2 class="section-title">Interests & <span class="gradient-text">Hobbies</span></h2>
+        <p class="section-subtitle">A glimpse into what keeps me inspired and active outside of academics and coding.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="skills-categories">
+        <!-- Extra Curricular -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">📸</div>
+            <h3 class="skill-category-title">Extra Curricular Activities</h3>
+          </div>
+          <div class="tag-container">
+            <span class="skill-tag">Photography</span>
+            <span class="skill-tag">Reading Books</span>
+            <span class="skill-tag">Generative Ideas Implementation</span>
+            <span class="skill-tag">Music Composing</span>
+          </div>
+        </div>
+
+        <!-- Sports -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">⚽</div>
+            <h3 class="skill-category-title">Sports</h3>
+          </div>
+          <div class="tag-container">
+            <span class="skill-tag">Volleyball</span>
+            <span class="skill-tag">Cricket</span>
+            <span class="skill-tag">Running</span>
+            <span class="skill-tag">Kabaddi</span>
+            <span class="skill-tag">Football</span>
+            <span class="skill-tag">Carrom Board</span>
+            <span class="skill-tag">Chess</span>
+          </div>
+        </div>
+
+        <!-- General Interests -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🎬</div>
+            <h3 class="skill-category-title">Interests &amp; Hobbies</h3>
+          </div>
+          <div class="tag-container">
+            <span class="skill-tag">Cinema Knowledge</span>
+            <span class="skill-tag">Music Listening</span>
+            <span class="skill-tag">Digital Investing &amp; Trades</span>
+            <span class="skill-tag">Motorsports</span>
+            <span class="skill-tag">Cycling</span>
+            <span class="skill-tag">Martial Arts</span>
+            <span class="skill-tag">Fitness</span>
+            <span class="skill-tag">Video Editing</span>
+            <span class="skill-tag">Cinematography</span>
+            <span class="skill-tag">AI Technologies</span>
+            <span class="skill-tag">Automation</span>
+            <span class="skill-tag">Automobiles</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="explore-slogan reveal">Never Ever Give Up</div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-logo">Horizon of Kamesh</div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/kamesh-sundaram/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/kamesh-codings" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="mailto:kamesh552024@gmail.com" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2025 Kamesh Sundaram. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="index.html#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#interests">Interests</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
