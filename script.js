@@ -342,7 +342,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgSrc = card.querySelector('img').src;
 
       if (modalCourseTitle) modalCourseTitle.textContent = title;
-      if (modalCourseIssuer) modalCourseIssuer.innerHTML = issuer; // keeps svg icon
+      if (modalCourseIssuer) {
+        modalCourseIssuer.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg> <strong>Course Providers & Platform :</strong> ${issuer.trim()}`;
+      }
       if (modalCourseDuration) modalCourseDuration.textContent = 'Duration: ' + duration;
       if (modalCourseObjective) modalCourseObjective.textContent = objective;
       if (modalCourseThumb) modalCourseThumb.src = imgSrc;

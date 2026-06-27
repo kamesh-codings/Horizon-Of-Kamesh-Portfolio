@@ -169,7 +169,7 @@ ul, ol {
 }
 
 .loader-icon {
-  width: 40px;
+  width: 70px;
   height: auto;
   margin-bottom: 0.5rem;
   display: block;
@@ -1048,7 +1048,6 @@ ul, ol {
   backdrop-filter: blur(10px);
   transition: var(--transition-normal);
   cursor: pointer;
-  group: true;
 }
 
 .certificate-card:hover {
@@ -1499,6 +1498,19 @@ ul, ol {
   gap: 0.3rem;
 }
 
+.timeline-school a,
+.timeline-location a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.timeline-school a:hover,
+.timeline-location a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
 /* ---------- Contact Section ---------- */
 .contact-grid {
   display: grid;
@@ -1859,6 +1871,7 @@ ul, ol {
   letter-spacing: 2px;
   background: linear-gradient(to top, #ff3300, #ff9d00, #ffcc00);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 10px rgba(255, 80, 0, 0.4)) drop-shadow(0 0 20px rgba(255, 50, 0, 0.2));
   animation: fireFlicker 2.5s infinite alternate;
@@ -1892,6 +1905,7 @@ ul, ol {
   letter-spacing: 3px;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.3));
 }
