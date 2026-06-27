@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Active nav link
     const sectionIcons = {
-      'home': './Icons/Home Icon.png',
+      'home': './Icons/Webpage Icon.png',
       'about': './Icons/About Icon.png',
       'skills': './Icons/Skills Icon.png',
       'certificates': './Icons/Certificates Icon.png',

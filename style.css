@@ -1298,7 +1298,7 @@ ul, ol {
 /* ---------- Skills Section ---------- */
 .skills-categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 1.5rem;
 }
 
@@ -1407,7 +1407,7 @@ ul, ol {
 /* ---------- Certificates Section ---------- */
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 1.5rem;
 }
 
@@ -1501,7 +1501,7 @@ ul, ol {
 /* ---------- Projects Section ---------- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 1.5rem;
 }
 
@@ -2268,7 +2268,7 @@ ul, ol {
 /* ---------- Learning Log Section ---------- */
 .learning-log-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 1.25rem;
   margin-top: 2rem;
 }
