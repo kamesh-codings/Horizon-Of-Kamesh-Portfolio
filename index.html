@@ -21,6 +21,12 @@
     <link rel="shortcut icon" href="./Icons/Webpage Icon.png" type="image/png">
     <!-- Lucide Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+    
+    <!-- Prevent FOUC (White Flash) -->
+    <style>
+        html, body { background-color: #0a0a0f; color: #f0f0f5; margin: 0; }
+        #loading-screen { background-color: #0a0a0f !important; }
+    </style>
 </head>
 
 <body>
@@ -29,10 +35,7 @@
     <div id="loading-screen">
         <img src="./Icons/Webpage Icon.png" class="loader-icon" alt="Webpage Icon">
         <div class="loader-logo">Horizon of Kamesh</div>
-        <div class="loader-bar-container">
-            <div class="loader-bar"></div>
-        </div>
-        <div class="loader-percentage">0%</div>
+        <div class="loader-spinner"></div>
     </div>
 
     <!-- ========== Particle Background ========== -->
@@ -175,7 +178,7 @@
     </section>
 
     <!-- ========== Intro Section ========== -->
-    <section class="section" id="intro" style="padding-top: 4rem; padding-bottom: 1rem;">
+    <section class="section" id="intro" style="padding-top: 4rem; padding-bottom: 0rem; min-height: auto;">
         <div class="section-container" style="max-width: 900px; text-align: center;">
             <p class="reveal"
                 style="font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 0;">
@@ -190,7 +193,7 @@
     </section>
 
     <!-- ========== Academic Journey Highlights ========== -->
-    <section class="section" id="academic-journey" style="padding-top: 2rem;">
+    <section class="section" id="academic-journey" style="padding-top: 2rem; padding-bottom: 2rem; min-height: auto;">
         <div class="section-container">
             <div class="section-header reveal">
                 <span class="section-label">📚 Academics</span>
@@ -213,6 +216,14 @@
                         <h4>B.Tech 1st Year — 1st Semester</h4>
                         <p>Achieved an excellent GPA of <strong>9.05</strong>.</p>
                     </div>
+                    <button class="view-result-btn" id="view-sem1-result" aria-label="View Semester 1 Result">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        View Result
+                    </button>
                 </div>
                 <!-- 1st Year - 2nd Sem -->
                 <div class="highlight-card">
@@ -222,6 +233,126 @@
                         <p>Result awaiting publication.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Result Image Modal ========== -->
+    <div class="result-modal-overlay" id="result-modal" role="dialog" aria-modal="true" aria-label="Semester Result">
+        <div class="result-modal-backdrop" id="result-modal-backdrop"></div>
+        <div class="result-modal-content">
+            <button class="result-modal-close" id="result-modal-close" aria-label="Close result viewer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+            </button>
+            <div class="result-modal-header">
+                <span class="result-modal-badge">📄 Official Grade Sheet</span>
+                <h3>B.Tech 1st Year — 1st Semester Result</h3>
+                <p>GPA: <strong>9.05</strong> &nbsp;|&nbsp; NOV/DEC 2025 Examination</p>
+            </div>
+            <div class="result-modal-image-wrapper">
+                <img src="./certificates/results/sem1-result.jpg"
+                    alt="B.Tech 1st Year 1st Semester Grade Sheet — GPA 9.05"
+                    class="result-modal-image"
+                    loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== What I'm Learning Section ========== -->
+    <section class="section" id="learning" style="padding-top: 2rem; padding-bottom: 2rem; min-height: auto;">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">📚 Always Growing</span>
+                <h2 class="section-title">What I'm <span class="gradient-text">Learning</span></h2>
+                <p class="section-subtitle">A live snapshot of my current academic journey and the subjects I'm actively exploring this semester.</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="learning-log-grid reveal">
+
+                <div class="learning-card">
+                    <div class="learning-card-icon">📐</div>
+                    <div class="learning-card-body">
+                        <span class="learning-card-tag">Mathematics</span>
+                        <h4 class="learning-card-title">Discrete Mathematics</h4>
+                        <p class="learning-card-desc">Exploring logic, sets, graph theory, combinatorics, and proofs — the mathematical backbone of computer science.</p>
+                        <div class="learning-card-status">🟢 In Progress</div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-card-icon">📊</div>
+                    <div class="learning-card-body">
+                        <span class="learning-card-tag">Data Science</span>
+                        <h4 class="learning-card-title">Exploratory Data Analysis</h4>
+                        <p class="learning-card-desc">Learning to uncover patterns, spot anomalies, and test hypotheses by summarizing datasets using visual and statistical methods.</p>
+                        <div class="learning-card-status">🟢 In Progress</div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-card-icon">🌳</div>
+                    <div class="learning-card-body">
+                        <span class="learning-card-tag">Core CS</span>
+                        <h4 class="learning-card-title">Data Structures</h4>
+                        <p class="learning-card-desc">Studying arrays, linked lists, stacks, queues, trees, and graphs to write efficient and optimized algorithms.</p>
+                        <div class="learning-card-status">🟢 In Progress</div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-card-icon">🖥️</div>
+                    <div class="learning-card-body">
+                        <span class="learning-card-tag">Systems</span>
+                        <h4 class="learning-card-title">Operating Systems</h4>
+                        <p class="learning-card-desc">Understanding process management, memory management, file systems, and how the OS bridges hardware and software.</p>
+                        <div class="learning-card-status">🟢 In Progress</div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-card-icon">🐍</div>
+                    <div class="learning-card-body">
+                        <span class="learning-card-tag">Programming</span>
+                        <h4 class="learning-card-title">Python for Data Science</h4>
+                        <p class="learning-card-desc">Applying Python with libraries like NumPy, Pandas, and Matplotlib to analyse and visualise real-world datasets.</p>
+                        <div class="learning-card-status">🟢 In Progress</div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-card-icon">🌿</div>
+                    <div class="learning-card-body">
+                        <span class="learning-card-tag">Life Skills</span>
+                        <h4 class="learning-card-title">Sustainable Living & Global Citizenship</h4>
+                        <p class="learning-card-desc">Exploring environmental stewardship, sustainable practices, and responsibilities as a global citizen.</p>
+                        <div class="learning-card-status">🟢 In Progress</div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-card-icon">🤝</div>
+                    <div class="learning-card-body">
+                        <span class="learning-card-tag">Personal Development</span>
+                        <h4 class="learning-card-title">Soft Skills</h4>
+                        <p class="learning-card-desc">Developing communication, teamwork, leadership, and emotional intelligence to thrive in professional environments.</p>
+                        <div class="learning-card-status">🟢 In Progress</div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-card-icon">🏅</div>
+                    <div class="learning-card-body">
+                        <span class="learning-card-tag">Extracurricular</span>
+                        <h4 class="learning-card-title">Activity Point Programming</h4>
+                        <p class="learning-card-desc">Earning activity points through co-curricular and extracurricular participation as part of holistic university development.</p>
+                        <div class="learning-card-status">🟢 In Progress</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -303,12 +434,12 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contact-name">Your Name</label>
-                            <input type="text" id="contact-name" name="name" placeholder="Enter your name (e.g. Michael Smith)" required
+                            <input type="text" id="contact-name" name="name" placeholder="Enter your name" required
                                 autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="contact-email">Your Email</label>
-                            <input type="email" id="contact-email" name="email" placeholder="Enter your Email (e.g. michael.smith@example.com)" required
+                            <input type="email" id="contact-email" name="email" placeholder="Enter your Email" required
                                 autocomplete="email">
                         </div>
                     </div>
