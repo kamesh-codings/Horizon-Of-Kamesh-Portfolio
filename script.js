@@ -503,6 +503,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultModalClose = document.getElementById('result-modal-close');
   const resultModalBackdrop = document.getElementById('result-modal-backdrop');
 
+  const resultModalSem2 = document.getElementById('result-modal-sem2');
+  const viewResultBtnSem2 = document.getElementById('view-sem2-result');
+  const resultModalCloseSem2 = document.getElementById('result-modal-close-sem2');
+  const resultModalBackdropSem2 = document.getElementById('result-modal-backdrop-sem2');
+
   function openResultModal() {
     if (resultModal) {
       resultModal.classList.add('active');
@@ -517,6 +522,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function openResultModalSem2() {
+    if (resultModalSem2) {
+      resultModalSem2.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeResultModalSem2() {
+    if (resultModalSem2) {
+      resultModalSem2.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
   if (viewResultBtn) {
     viewResultBtn.addEventListener('click', openResultModal);
   }
@@ -527,9 +546,20 @@ document.addEventListener('DOMContentLoaded', () => {
     resultModalBackdrop.addEventListener('click', closeResultModal);
   }
 
+  if (viewResultBtnSem2) {
+    viewResultBtnSem2.addEventListener('click', openResultModalSem2);
+  }
+  if (resultModalCloseSem2) {
+    resultModalCloseSem2.addEventListener('click', closeResultModalSem2);
+  }
+  if (resultModalBackdropSem2) {
+    resultModalBackdropSem2.addEventListener('click', closeResultModalSem2);
+  }
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && resultModal && resultModal.classList.contains('active')) {
-      closeResultModal();
+    if (e.key === 'Escape') {
+      if (resultModal && resultModal.classList.contains('active')) closeResultModal();
+      if (resultModalSem2 && resultModalSem2.classList.contains('active')) closeResultModalSem2();
     }
   });
 
