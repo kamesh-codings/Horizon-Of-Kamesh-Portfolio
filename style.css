@@ -2605,3 +2605,37 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
+/* ---------- MongoDB Specialization Collaged Certificate Styles ---------- */
+.collaged-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.collaged-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.25);
+  border-color: #10b981 !important;
+}
+.collaged-card:hover .collaged-wrapper img {
+  transform: scale(1.04);
+}
+.collaged-wrapper img {
+  transition: transform 0.4s ease;
+}
+.mdb-thumb-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.mdb-thumb-card:hover {
+  border-color: rgba(16, 185, 129, 0.6) !important;
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .mongodb-thumb-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .mongodb-thumb-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+

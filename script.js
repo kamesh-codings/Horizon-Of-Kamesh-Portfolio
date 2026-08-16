@@ -333,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
   certCards.forEach(card => {
     card.addEventListener('click', () => {
       if (!courseModal) return;
+      if (card.classList.contains('collaged-card') || card.id === 'cert-mongodb-collection') return;
       
       const title = card.getAttribute('data-title') || card.querySelector('.certificate-title').textContent;
       const issuer = card.getAttribute('data-issuer') || card.querySelector('.certificate-issuer').textContent;
@@ -392,8 +393,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeCertModal() {
     if (certModal) {
       certModal.classList.remove('active');
-      // Keep overflow hidden if course modal is still open
-      if (courseModal && courseModal.classList.contains('active')) {
+      // Keep overflow hidden if course modal or mongodb modal is still open
+      const mdbModalEl = document.getElementById('mongodb-modal');
+      if ((courseModal && courseModal.classList.contains('active')) || (mdbModalEl && mdbModalEl.classList.contains('active'))) {
         document.body.style.overflow = 'hidden';
       } else {
         document.body.style.overflow = '';
@@ -602,6 +604,166 @@ document.addEventListener('DOMContentLoaded', () => {
   if (skillTooltipOverlay) skillTooltipOverlay.addEventListener('click', closeSkillTooltip);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeSkillTooltip();
+  });
+
+  // ========== MongoDB Specialization Modal Logic ==========
+  const mongodbCard = document.getElementById('cert-mongodb-collection');
+  const mongodbModal = document.getElementById('mongodb-modal');
+  const mongodbModalClose = document.getElementById('mongodb-modal-close');
+  const mdbThumbCards = document.querySelectorAll('.mdb-thumb-card');
+
+  const mongodbData = [
+    {
+      title: "MongoDB Basics for Students",
+      date: "July 16, 2026",
+      duration: "1 Hour",
+      objective: "Gain a foundational understanding of NoSQL database concepts, JSON document storage, BSON data types, and fundamental CRUD operations using MongoDB.",
+      outcomes: ["NoSQL Database Fundamentals", "JSON & BSON Data Structure", "MongoDB CRUD Operations", "Document Indexing Basics"],
+      certImg: "./certificates/mongodb/cert_1_basics.png",
+      badgeImg: "./certificates/mongodb/badge_1_basics.png",
+      badgeTitle: "MongoDB Skill — Basics for Students"
+    },
+    {
+      title: "AI Data Strategy with MongoDB",
+      date: "July 17, 2026",
+      duration: "30 Minutes",
+      objective: "Formulate modern AI data architectures by leveraging MongoDB Atlas as a unified operational and vector database for enterprise AI workflows.",
+      outcomes: ["AI Data Architecture", "MongoDB Atlas Integration", "Operational & Vector Data Synergy", "Scalable AI Data Pipelines"],
+      certImg: "./certificates/mongodb/cert_2_ai_data_strategy.png",
+      badgeImg: "./certificates/mongodb/badge_2_ai_data_strategy.png",
+      badgeTitle: "MongoDB Skill — AI Data Strategy"
+    },
+    {
+      title: "Vector Search Fundamentals",
+      date: "July 17, 2026",
+      duration: "1 Hour",
+      objective: "Master high-dimensional vector embeddings, similarity metrics, and indexing with MongoDB Atlas Vector Search for semantic search and AI applications.",
+      outcomes: ["Vector Embeddings & Cosine Distance", "MongoDB Atlas Vector Search", "ANN Indexing & Filtering", "Semantic Search Implementation"],
+      certImg: "./certificates/mongodb/cert_3_vector_search.png",
+      badgeImg: "./certificates/mongodb/badge_3_vector_search.png",
+      badgeTitle: "MongoDB Skill — Vector Search Fundamentals"
+    },
+    {
+      title: "RAG with MongoDB",
+      date: "July 19, 2026",
+      duration: "1 Hour",
+      objective: "Build Retrieval-Augmented Generation (RAG) pipelines combining LLMs with MongoDB Atlas Vector Search to ground AI models in real-time enterprise data.",
+      outcomes: ["Retrieval-Augmented Generation (RAG)", "LLM Context Window Grounding", "Hybrid Search & Reranking", "Enterprise AI Knowledge Retrieval"],
+      certImg: "./certificates/mongodb/cert_4_rag.png",
+      badgeImg: "./certificates/mongodb/badge_4_rag.png",
+      badgeTitle: "MongoDB Skill — RAG with MongoDB"
+    },
+    {
+      title: "AI Agents with MongoDB",
+      date: "July 19, 2026",
+      duration: "1.25 Hours",
+      objective: "Design autonomous AI agent frameworks leveraging MongoDB for persistent memory, tool state tracking, and context-aware execution loops.",
+      outcomes: ["Autonomous AI Agent Architecture", "Persistent Agent Memory & State", "Multi-Tool Orchestration", "Contextual Decision Making"],
+      certImg: "./certificates/mongodb/cert_5_ai_agents.png",
+      badgeImg: "./certificates/mongodb/badge_5_ai_agents.png",
+      badgeTitle: "MongoDB Skill — AI Agents with MongoDB"
+    }
+  ];
+
+  function updateMongoDBActiveCert(index) {
+    const item = mongodbData[index];
+    if (!item) return;
+
+    // Update active thumb card styling
+    mdbThumbCards.forEach((card, idx) => {
+      const label = card.querySelector('div:last-child');
+      if (idx === index) {
+        card.classList.add('active');
+        card.style.borderColor = '#10b981';
+        card.style.background = 'rgba(16, 185, 129, 0.15)';
+        if (label) label.style.color = 'var(--text-primary)';
+      } else {
+        card.classList.remove('active');
+        card.style.borderColor = 'transparent';
+        card.style.background = 'rgba(255, 255, 255, 0.04)';
+        if (label) label.style.color = 'var(--text-muted)';
+      }
+    });
+
+    // Update fields
+    const titleEl = document.getElementById('mdb-active-title');
+    const dateEl = document.getElementById('mdb-active-date');
+    const durEl = document.getElementById('mdb-active-duration');
+    const objEl = document.getElementById('mdb-active-objective');
+    const outcomesEl = document.getElementById('mdb-active-outcomes');
+    const certImgEl = document.getElementById('mdb-active-cert-img');
+    const badgeImgEl = document.getElementById('mdb-active-badge-img');
+    const badgeTitleEl = document.getElementById('mdb-active-badge-title');
+
+    if (titleEl) titleEl.textContent = item.title;
+    if (dateEl) dateEl.textContent = item.date;
+    if (durEl) durEl.textContent = 'Duration: ' + item.duration;
+    if (objEl) objEl.textContent = item.objective;
+    if (certImgEl) certImgEl.src = item.certImg;
+    if (badgeImgEl) badgeImgEl.src = item.badgeImg;
+    if (badgeTitleEl) badgeTitleEl.textContent = item.badgeTitle;
+
+    if (outcomesEl) {
+      outcomesEl.innerHTML = '';
+      item.outcomes.forEach(out => {
+        const li = document.createElement('li');
+        li.textContent = out;
+        outcomesEl.appendChild(li);
+      });
+    }
+  }
+
+  if (mongodbCard && mongodbModal) {
+    mongodbCard.addEventListener('click', () => {
+      updateMongoDBActiveCert(0);
+      mongodbModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  mdbThumbCards.forEach((card, idx) => {
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+      updateMongoDBActiveCert(idx);
+    });
+  });
+
+  if (mongodbModalClose && mongodbModal) {
+    mongodbModalClose.addEventListener('click', () => {
+      mongodbModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    mongodbModal.addEventListener('click', (e) => {
+      if (e.target === mongodbModal) {
+        mongodbModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // Click on active cert img inside mongodb modal to view full cert
+  const mdbCertImgWrapper = document.getElementById('mdb-cert-img-wrapper');
+  if (mdbCertImgWrapper) {
+    mdbCertImgWrapper.addEventListener('click', () => {
+      const activeCertImg = document.getElementById('mdb-active-cert-img');
+      const certModal = document.getElementById('certificate-modal');
+      const certModalImg = document.getElementById('cert-modal-img');
+      if (certModal && certModalImg && activeCertImg) {
+        certModalImg.src = activeCertImg.src;
+        certModal.classList.add('active');
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const certModal = document.getElementById('certificate-modal');
+      if (certModal && certModal.classList.contains('active')) return;
+      if (mongodbModal && mongodbModal.classList.contains('active')) {
+        mongodbModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
   });
 
 });
