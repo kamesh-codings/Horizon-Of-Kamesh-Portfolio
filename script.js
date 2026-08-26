@@ -363,21 +363,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
+      // Populate thumbnail(s) - Supports dual certificates stacked vertically
+      const certsData = card.getAttribute('data-certs');
+      if (modalCourseThumbContainer) {
+        if (certsData) {
+          const certUrls = certsData.split('|').map(s => s.trim()).filter(Boolean);
+          modalCourseThumbContainer.innerHTML = `
+            <div style="display: flex; flex-direction: column; gap: 1.25rem; width: 100%;">
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 600; color: var(--accent-blue); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.35rem;">
+                  <span>1. Udemy Certificate</span>
+                </div>
+                <div class="course-modal-thumbnail individual-thumb" data-src="${certUrls[0]}" style="position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; border: 1px solid var(--border-glass);">
+                  <img src="${certUrls[0]}" alt="${title} - Udemy" style="width: 100%; display: block;"/>
+                  <div class="thumb-overlay"><span>View Full Certificate (Udemy) 🔍</span></div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 600; color: var(--accent-cyan); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.35rem;">
+                  <span>2. Infosys Springboard Certificate</span>
+                </div>
+                <div class="course-modal-thumbnail individual-thumb" data-src="${certUrls[1]}" style="position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; border: 1px solid var(--border-glass);">
+                  <img src="${certUrls[1]}" alt="${title} - Infosys Springboard" style="width: 100%; display: block;"/>
+                  <div class="thumb-overlay"><span>View Full Certificate (Infosys Springboard) 🔍</span></div>
+                </div>
+              </div>
+            </div>
+          `;
+          modalCourseThumbContainer.querySelectorAll('.individual-thumb').forEach(thumb => {
+            thumb.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const fullSrc = thumb.getAttribute('data-src');
+              if (certModal && certModalImg) {
+                certModalImg.src = fullSrc;
+                certModal.classList.add('active');
+              }
+            });
+          });
+        } else {
+          modalCourseThumbContainer.innerHTML = `
+            <div class="course-modal-thumbnail individual-thumb" data-src="${imgSrc}" style="position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; border: 1px solid var(--border-glass);">
+              <img alt="Certificate Thumbnail" id="modal-course-thumb" src="${imgSrc}" style="width: 100%; display: block;"/>
+              <div class="thumb-overlay"><span>View Full Certificate 🔍</span></div>
+            </div>
+          `;
+          const thumbEl = modalCourseThumbContainer.querySelector('.individual-thumb');
+          if (thumbEl) {
+            thumbEl.addEventListener('click', (e) => {
+              e.stopPropagation();
+              if (certModal && certModalImg) {
+                certModalImg.src = imgSrc;
+                certModal.classList.add('active');
+              }
+            });
+          }
+        }
+      }
+
       courseModal.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
   });
-
-  // Open Full Certificate Image Modal from Thumbnail
-  if (modalCourseThumbContainer) {
-    modalCourseThumbContainer.addEventListener('click', () => {
-      if (certModal && certModalImg && modalCourseThumb) {
-        certModalImg.src = modalCourseThumb.src;
-        certModal.classList.add('active');
-        // Do not alter overflow as it is already hidden by course modal
-      }
-    });
-  }
 
   // Close Functions
   function closeCourseModal() {
