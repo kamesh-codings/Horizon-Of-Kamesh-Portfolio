@@ -360,31 +360,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // Populate thumbnail(s) - Supports dual certificates stacked vertically
+      // Populate thumbnail(s) - Supports dynamic multi-certificates stacked vertically
       const certsData = card.getAttribute('data-certs');
+      const certLabelsData = card.getAttribute('data-cert-labels');
       if (modalCourseThumbContainer) {
         if (certsData) {
           const certUrls = certsData.split('|').map(s => s.trim()).filter(Boolean);
+          const certLabels = certLabelsData ? certLabelsData.split('|').map(s => s.trim()) : [];
+          const colors = ['var(--accent-blue)', 'var(--accent-cyan)', 'var(--accent-purple)', 'var(--accent-green)'];
+
+          const itemsHtml = certUrls.map((url, idx) => {
+            const label = certLabels[idx] || `Certificate ${idx + 1}`;
+            const color = colors[idx % colors.length];
+            return `
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 600; color: ${color}; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.35rem;">
+                  <span>${label}</span>
+                </div>
+                <div class="course-modal-thumbnail individual-thumb" data-src="${url}" style="position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; border: 1px solid var(--border-glass);">
+                  <img src="${url}" alt="${title} - Part ${idx + 1}" style="width: 100%; display: block;"/>
+                  <div class="thumb-overlay"><span>View Full Certificate 🔍</span></div>
+                </div>
+              </div>
+            `;
+          }).join('');
+
           modalCourseThumbContainer.innerHTML = `
             <div style="display: flex; flex-direction: column; gap: 1.25rem; width: 100%;">
-              <div>
-                <div style="font-size: 0.8rem; font-weight: 600; color: var(--accent-blue); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.35rem;">
-                  <span>1. Udemy Certificate (Course Completion via Integrated Portal)</span>
-                </div>
-                <div class="course-modal-thumbnail individual-thumb" data-src="${certUrls[0]}" style="position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; border: 1px solid var(--border-glass);">
-                  <img src="${certUrls[0]}" alt="${title} - Udemy" style="width: 100%; display: block;"/>
-                  <div class="thumb-overlay"><span>View Full Certificate (Udemy) 🔍</span></div>
-                </div>
-              </div>
-              <div>
-                <div style="font-size: 0.8rem; font-weight: 600; color: var(--accent-cyan); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.35rem;">
-                  <span>2. Infosys Springboard Certificate (Enrolled Platform Recognition)</span>
-                </div>
-                <div class="course-modal-thumbnail individual-thumb" data-src="${certUrls[1]}" style="position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; border: 1px solid var(--border-glass);">
-                  <img src="${certUrls[1]}" alt="${title} - Infosys Springboard" style="width: 100%; display: block;"/>
-                  <div class="thumb-overlay"><span>View Full Certificate (Infosys Springboard) 🔍</span></div>
-                </div>
-              </div>
+              ${itemsHtml}
             </div>
           `;
           modalCourseThumbContainer.querySelectorAll('.individual-thumb').forEach(thumb => {
