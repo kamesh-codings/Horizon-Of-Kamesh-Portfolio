@@ -1594,6 +1594,45 @@ ul, ol {
   color: #fff;
 }
 
+/* Project Live Badge */
+.badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-live .live-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ef4444;
+  animation: liveDotPulse 1.8s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes liveDotPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.9);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+    box-shadow: 0 0 2px rgba(239, 68, 68, 0.3);
+  }
+}
+
 /* Course Details Modal */
 .course-modal {
   position: fixed;
