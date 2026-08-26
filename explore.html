@@ -759,8 +759,18 @@
 <button aria-label="Close course details" class="modal-close" id="course-modal-close">×</button>
 <div class="course-modal-header">
 <h2 id="modal-course-title">Course Title</h2>
-<p class="certificate-issuer" id="modal-course-issuer" style="margin-bottom:0; font-size:0.9rem;"></p>
-<p id="modal-course-duration" style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;"></p>
+<div class="course-modal-meta" style="display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-top: 0.6rem;">
+  <div style="display: flex; align-items: baseline; gap: 0.4rem; font-size: 0.85rem; color: var(--text-secondary);">
+    <svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="13" style="flex-shrink: 0; align-self: center;"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path></svg>
+    <span style="font-weight: 600; color: var(--text-primary); white-space: nowrap;">Provider:</span>
+    <span id="modal-course-issuer"></span>
+  </div>
+  <div style="display: flex; align-items: baseline; gap: 0.4rem; font-size: 0.85rem; color: var(--text-secondary);">
+    <svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="13" style="flex-shrink: 0; align-self: center;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+    <span style="font-weight: 600; color: var(--text-primary); white-space: nowrap;">Duration:</span>
+    <span id="modal-course-duration"></span>
+  </div>
+</div>
 </div>
 <div class="course-modal-body">
 <div class="course-modal-info">

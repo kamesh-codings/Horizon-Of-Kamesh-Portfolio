@@ -1680,10 +1680,12 @@ ul, ol {
 }
 
 .course-modal-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  padding-right: 2.5rem;
+  line-height: 1.35;
 }
 
 .course-modal-body {
